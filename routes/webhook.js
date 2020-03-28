@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const https = require('https');
+const env = require('../config')
 
 router.get('/', function (req, res) {
     getCIDVIData().then((data) => {
@@ -13,10 +14,9 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
-
 getCIDVIData = () => {
     return new Promise((resolve, reject) => {
-        https.get("https://dl1ndau7be.execute-api.us-east-1.amazonaws.com/default/coronavirusMexicoStats", resp => {
+        https.get(env.DATA_URL, resp => {
             let data = "";
             resp.on("data", chunk => { data += chunk })
             resp.on("end", () => {
@@ -48,8 +48,8 @@ parseCODVIData = (data) => {
 tweetData = (text) => {
     const jsonData = JSON.stringify({ text: text })
     const options = {
-        hostname: 'wh.automate.io',
-        path: '/webhook/5e7f7d572c74d2691ab2ae4f',
+        hostname: env.TWEET_URL,
+        path: env.TWEET_PATH,
         method: 'POST',
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
