@@ -38,9 +38,9 @@ parseCODVIData = (data) => {
     - ${data.national_totals.suspicious_cases} ❓ Sospechosos
     - ${data.national_totals.deads} ☠️ Muertes
 
-    Fuente: http://ncov.sinave.gob.mx/mapa.aspx
-    ${ data.update_label}
-    #CODVID19Mx #CODVID19
+    Fuente: https://bit.ly/2Jl3qdO
+    Corte:${data.replace("Cierre con corte a las", "")}
+    #CODVID19Mx #CODVID19 #CuarentenaPositiva
     `
 
     return text
