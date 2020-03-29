@@ -40,6 +40,7 @@ parseCODVIData = (data) => {
 
     Fuente: http://ncov.sinave.gob.mx/mapa.aspx
     ${ data.update_label}
+    #CODVID19Mx #CODVID19
     `
 
     return text
