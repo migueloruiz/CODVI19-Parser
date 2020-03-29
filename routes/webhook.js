@@ -39,7 +39,7 @@ parseCODVIData = (data) => {
     - ${data.national_totals.deads} ☠️ Muertes
 
     Fuente: https://bit.ly/2Jl3qdO
-    Corte:${data.replace("Cierre con corte a las", "")}
+    Corte:${data.update_label.replace("Cierre con corte a las", "")}
     #CODVID19Mx #CODVID19 #CuarentenaPositiva
     `
 
