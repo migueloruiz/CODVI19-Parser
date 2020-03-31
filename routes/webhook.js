@@ -40,7 +40,7 @@ parseCODVIData = (data) => {
 
     Fuente: https://bit.ly/2Jl3qdO
     Corte:${data.update_label.replace("Cierre con corte a las", "")}
-    #CODVID19Mx #CODVID19 #CuarentenaPositiva
+    #COVID19Mx #COVID19 #CoronavirusMX
     `
 
     return text
