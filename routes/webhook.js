@@ -34,15 +34,15 @@ parseCODVIData = (data) => {
     let text = ""
 
     text = `
-    📈 Estimados: ${parseInt(data.national_totals.confirmed_cases) * 8}
-    🦠 Confirmados: ${data.national_totals.confirmed_cases}
-    ❌ Negativos: ${data.national_totals.negative_cases}
-    ❓ Sospechosos: ${data.national_totals.suspicious_cases}
-    ☠️ Muertes: ${data.national_totals.deads}
+📈 Estimados: ${parseInt(data.national_totals.confirmed_cases) * 8}
+🦠 Confirmados: ${data.national_totals.confirmed_cases}
+❌ Negativos: ${data.national_totals.negative_cases}
+❓ Sospechosos: ${data.national_totals.suspicious_cases}
+☠️ Muertes: ${data.national_totals.deads}
 
-    Fuente: https://bit.ly/2Jl3qdO
-    Corte:${data.update_label.replace("Cierre con corte a las", "")}
-    #COVID19Mx #COVID19 #CoronavirusMX
+Fuente: https://bit.ly/2Jl3qdO
+Corte:${data.update_label.replace("Cierre con corte a las", "")}
+#COVID19Mx #COVID19 #CoronavirusMX
     `
 
     return text
