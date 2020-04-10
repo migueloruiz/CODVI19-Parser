@@ -4,11 +4,13 @@ const env = require('../config')
 
 router.get('/', function (req, res) {
     getCIDVIData().then((data) => {
-        tweetData(parseCODVIData(data))
+        let text = parseCODVIData(data);
+        // console.log(text)
+        tweetData(text)
         res.sendStatus(200)
     }).catch((error) => {
         console.log(error)
-        res.status(404) //.json(error)
+        res.status(404).json(error)
     })
 })
 
@@ -32,11 +34,11 @@ parseCODVIData = (data) => {
     let text = ""
 
     text = `
-    🇲🇽 Casos Nacionales
-    - ${data.national_totals.confirmed_cases} 🦠 Confirmados
-    - ${data.national_totals.negative_cases} ❌ Negativos
-    - ${data.national_totals.suspicious_cases} ❓ Sospechosos
-    - ${data.national_totals.deads} ☠️ Muertes
+    📈 Estimados: ${parseInt(data.national_totals.confirmed_cases) * 8}
+    🦠 Confirmados: ${data.national_totals.confirmed_cases}
+    ❌ Negativos: ${data.national_totals.negative_cases}
+    ❓ Sospechosos: ${data.national_totals.suspicious_cases}
+    ☠️ Muertes: ${data.national_totals.deads}
 
     Fuente: https://bit.ly/2Jl3qdO
     Corte:${data.update_label.replace("Cierre con corte a las", "")}
