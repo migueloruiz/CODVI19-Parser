@@ -32,17 +32,17 @@ getCIDVIData = () => {
 
 parseCODVIData = (data) => {
     let text = ""
+    let numberFormat = Intl.NumberFormat()
 
     text = `
-📈 Estimados: ${parseInt(data.national_totals.confirmed_cases) * 8}
-🦠 Confirmados: ${data.national_totals.confirmed_cases}
-❌ Negativos: ${data.national_totals.negative_cases}
-❓ Sospechosos: ${data.national_totals.suspicious_cases}
-☠️ Muertes: ${data.national_totals.deads}
+📈 Estimados: ${numberFormat.format(parseInt(data.national_totals.confirmed_cases) * 8)}
+🦠 Confirmados: ${numberFormat.format(data.national_totals.confirmed_cases)}
+❌ Negativos: ${numberFormat.format(data.national_totals.negative_cases)}
+❓ Sospechosos: ${numberFormat.format(data.national_totals.suspicious_cases)}
+☠️ Muertes: ${numberFormat.format(data.national_totals.deads)}
 
-Fuente: https://bit.ly/2Jl3qdO
-Corte:${data.update_label.replace("Cierre con corte a las", "")}
-#COVID19Mx #COVID19 #CoronavirusMX
+Fuente: bit.ly/2YcbTIT
+#COVID19Mx #COVID19 #CoronavirusMX #QuedateEnCasa
     `
 
     return text
