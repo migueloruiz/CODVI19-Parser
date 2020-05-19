@@ -35,7 +35,6 @@ parseCODVIData = (data) => {
     let numberFormat = Intl.NumberFormat()
 
     text = `
-📈 Estimados: ${numberFormat.format(parseInt(data.national_totals.confirmed_cases) * 8)}
 🦠 Confirmados: ${numberFormat.format(data.national_totals.confirmed_cases)}
 ❌ Negativos: ${numberFormat.format(data.national_totals.negative_cases)}
 ❓ Sospechosos: ${numberFormat.format(data.national_totals.suspicious_cases)}
